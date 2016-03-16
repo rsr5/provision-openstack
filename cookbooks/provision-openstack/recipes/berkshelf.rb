@@ -1,5 +1,6 @@
 
 fragment 'openstack_github_cookbooks' do
+  every_node true
   berkshelf Hash[
     %w(bare-metal
        data-processing
@@ -25,4 +26,8 @@ fragment 'openstack_github_cookbooks' do
       ]
     end
   ]
+  machine_file(
+    chef_root('.chef/encrypted_data_bag_secret'),
+    '/etc/chef/openstack_data_bag_secret'
+  )
 end
