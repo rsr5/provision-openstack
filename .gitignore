@@ -1,0 +1,13 @@
+.chef/roles
+.chef/nodes
+.chef/berks-cookbooks
+.chef/cookbooks
+.chef/cache
+.chef/backup
+.chef/environments
+.chef/data_bags
+.chef/clients
+*.lock
+*.dot
+node.json
+vms

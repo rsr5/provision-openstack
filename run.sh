@@ -1,0 +1,13 @@
+echo "
+{
+  \"run_list\": [
+    \"provision-openstack::default\"
+  ],
+  \"fragments\": {
+    \"chef-zero-root\": \"$(pwd)\"
+  }
+}" > .chef/node.json
+
+rm Berksfile.lock
+berks vendor .chef/cookbooks;
+chef-client -j .chef/node.json -c .chef/client.rb
