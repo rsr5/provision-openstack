@@ -7,6 +7,7 @@ end
 
 include_recipe 'provision-openstack::berkshelf'
 include_recipe 'provision-openstack::environments'
+include_recipe 'provision-openstack::databags'
 include_recipe 'provision-openstack::roles'
 include_recipe 'provision-openstack::single-controller-no-network'
 
