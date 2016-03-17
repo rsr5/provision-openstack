@@ -34,6 +34,11 @@ class VirtualBoxDriver < Driver
     {
       vagrant_options: {
         'vm.box' => 'ubuntu14'
+      },
+      convergence_options: {
+        chef_version: '12.4.1',
+        chef_config: ["log_location '/var/log/chef/client.log'",
+                      'log_level :info'].join("\n")
       }
     }
   end
