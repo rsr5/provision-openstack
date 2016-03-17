@@ -1,3 +1,4 @@
+#!/bin/bash
 echo "
 {
   \"run_list\": [
