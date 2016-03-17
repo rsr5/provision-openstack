@@ -11,3 +11,4 @@
 *.dot
 node.json
 vms
+*.swp
