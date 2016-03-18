@@ -22,18 +22,18 @@ class VirtualBoxDriver < Driver
 
   def fetch_box
     box = ::Chef::Resource::VagrantBox.new(
-      'ubuntu14',
+      'centos7',
       ::Chef.node.run_context
     )
-    box.url 'http://opscode-vm-bento.s3.amazonaws.com/vagrant/virtualbox/'\
-            'opscode_ubuntu-14.04_chef-provisionerless.box'
+    box.url 'http://opscode-vm-bento.s3.amazonaws.com' \
+            '/vagrant/virtualbox/opscode_centos-7.2_chef-provisionerless.box'
     box.run_action(:create)
   end
 
   def extra_machine_options(_machine)
     {
       vagrant_options: {
-        'vm.box' => 'ubuntu14'
+        'vm.box' => 'centos7'
       },
       convergence_options: {
         chef_version: '12.4.1',
