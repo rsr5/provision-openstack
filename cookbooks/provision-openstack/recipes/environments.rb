@@ -16,7 +16,7 @@ ENV
         'user' => 'admin'
       },
       'identity' => {
-        'bind_interface' => 'eth1'
+        'bind_interface' => 'enp0s8'
       },
       'endpoints' => {
         'host' => '192.168.100.60',
@@ -35,11 +35,11 @@ ENV
         },
         'compute-vnc-bind' => {
           'host' => '0.0.0.0',
-          'bind_interface' => 'eth1'
+          'bind_interface' => 'enp0s8'
         },
         'compute-vnc' => {
           'host' => '0.0.0.0',
-          'bind_interface' => 'eth1'
+          'bind_interface' => 'enp0s8'
         }
       },
       'network' => {
@@ -56,13 +56,13 @@ ENV
           'tenant_network_type' => 'gre'
         },
         'api' => {
-          'bind_interface' => 'eth1'
+          'bind_interface' => 'enp0s8'
         },
         'quota' => {
           'floatingip' => '50'
         },
         'l3' => {
-          'external_network_bridge_interface' => 'eth1'
+          'external_network_bridge_interface' => 'enp0s8'
         }
       },
       'block-storage' => {
@@ -73,10 +73,10 @@ ENV
       },
       'image' => {
         'api' => {
-          'bind_interface' => 'eth1'
+          'bind_interface' => 'enp0s8'
         },
         'registry' => {
-          'bind_interface' => 'eth1'
+          'bind_interface' => 'enp0s8'
         },
         'image_upload' => true,
         'upload_images' => [
@@ -90,14 +90,14 @@ ENV
       'compute' => {
         'enabled_apis' => 'ec2,osapi_compute',
         'novnc_proxy' => {
-          'bind_interface' => 'eth1',
+          'bind_interface' => 'enp0s8',
           'bind_address' => '0.0.0.0'
         },
         'libvirt' => {
           'virt_type' => 'qemu'
         },
         'network' => {
-          'public_interface' => 'eth1',
+          'public_interface' => 'enp0s8',
           'service_type' => 'neutron'
         },
         'config' => {
