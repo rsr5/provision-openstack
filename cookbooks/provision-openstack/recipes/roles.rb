@@ -23,3 +23,10 @@ chef_role 'os-ops-messaging' do
     recipe[openstack-ops-messaging::server]
   )
 end
+
+chef_role 'os-identity' do
+  run_list %w(
+    recipe[openstack-identity::server-apache]
+    recipe[openstack-identity::registration]
+  )
+end
