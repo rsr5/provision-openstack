@@ -11,6 +11,11 @@ fragment 'os-compute-single-controller-no-network' do
     openstack-ops-database::openstack-db
     os-ops-messaging
     os-identity
+
+    os-image
+    os-image-api
+    openstack-image::identity_registration
+    os-image-upload
   )
   machine_option(
     vagrant_config: <<-ENDCONFIG

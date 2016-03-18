@@ -30,3 +30,20 @@ chef_role 'os-identity' do
     recipe[openstack-identity::registration]
   )
 end
+
+chef_role 'os-image'
+chef_role 'os-image-api' do
+  run_list %w(
+    recipe[openstack-image::api]
+  )
+end
+chef_role 'os-image-registry' do
+  run_list %w(
+    recipe[openstack-image::registry]
+  )
+end
+chef_role 'os-image-upload' do
+  run_list %w(
+    recipe[openstack-image::identity_registration]
+  )
+end
