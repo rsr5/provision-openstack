@@ -1,4 +1,3 @@
-
 chef_role 'os_base' do
   run_list %w(
     recipe[apt]
@@ -24,26 +23,16 @@ chef_role 'os-ops-messaging' do
   )
 end
 
-chef_role 'os-identity' do
+fragment 'os-ops' do
+  memory_weight 100
   run_list %w(
-    recipe[openstack-identity::server-apache]
-    recipe[openstack-identity::registration]
+    os-compute-single-controller-no-network
+    os_base
+    os-ops-database
+    openstack-ops-database::openstack-db
+    os-ops-messaging
   )
-end
-
-chef_role 'os-image'
-chef_role 'os-image-api' do
-  run_list %w(
-    recipe[openstack-image::api]
-  )
-end
-chef_role 'os-image-registry' do
-  run_list %w(
-    recipe[openstack-image::registry]
-  )
-end
-chef_role 'os-image-upload' do
-  run_list %w(
-    recipe[openstack-image::identity_registration]
-  )
+  environment 'vagrant-multi-neutron'
+  tags %w(controller)
+  only_group_with_tags %w(controller)
 end

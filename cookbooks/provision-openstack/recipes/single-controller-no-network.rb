@@ -3,13 +3,7 @@
 chef_role 'os-compute-single-controller-no-network'
 
 fragment 'os-compute-single-controller-no-network' do
-  memory_weight 500
   run_list %w(
-    os-compute-single-controller-no-network
-    os_base
-    os-ops-database
-    openstack-ops-database::openstack-db
-    os-ops-messaging
     os-identity
 
     os-image
@@ -37,4 +31,6 @@ fragment 'os-compute-single-controller-no-network' do
 ENDCONFIG
   )
   environment 'vagrant-multi-neutron'
+  tags %w(controller)
+  only_group_with_tags %w(controller)
 end
