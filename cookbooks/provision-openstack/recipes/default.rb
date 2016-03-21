@@ -14,6 +14,7 @@ include_recipe 'provision-openstack::identity'
 include_recipe 'provision-openstack::images'
 include_recipe 'provision-openstack::compute'
 include_recipe 'provision-openstack::block_storage'
+include_recipe 'provision-openstack::compute_cert'
 
 # require 'pry'; binding.pry
 
