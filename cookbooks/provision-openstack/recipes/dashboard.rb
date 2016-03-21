@@ -8,4 +8,7 @@ fragment 'os-dashboard' do
     os-dashboard
     openstack-dashboard::server
   )
+  environment 'vagrant-multi-neutron'
+  tags %w(controller)
+  only_group_with_tags %w(controller)
 end

@@ -29,49 +29,82 @@ bags = {
     },
     'openstack-ceilometer' => {
       'id' => 'openstack-ceilometer',
-      'openstack-ceilometer' => random_pass('service_passwords', 'openstack-ceilometer')
+      'openstack-ceilometer' => random_pass(
+        'service_passwords',
+        'openstack-ceilometer'
+      )
     },
     'openstack-block-storage' => {
       'id' => 'openstack-block-storage',
-      'openstack-block-storage' => random_pass('service_passwords', 'openstack-block-storage')
+      'openstack-block-storage' => random_pass(
+        'service_passwords',
+        'openstack-block-storage'
+      )
     },
     'openstack-image' => {
       'id' => 'openstack-image',
-      'openstack-image' => random_pass('service_passwords', 'openstack-image')
+      'openstack-image' => random_pass(
+        'service_passwords',
+        'openstack-image'
+      )
     },
     'openstack-compute' => {
       'id' => 'openstack-compute',
-      'openstack-compute' => random_pass('service_passwords', 'openstack-compute')
+      'openstack-compute' => random_pass(
+        'service_passwords',
+        'openstack-compute'
+      )
     },
     'openstack-network' => {
       'id' => 'openstack-network',
-      'openstack-network' => random_pass('service_passwords', 'openstack-network')
+      'openstack-network' => random_pass(
+        'service_passwords',
+        'openstack-network'
+      )
     },
     'rabbit_cookie' => {
       'id' => 'rabbit_cookie',
-      'rabbit_cookie' => random_pass('service_passwords', 'rabbit_cookie')
+      'rabbit_cookie' => random_pass(
+        'service_passwords',
+        'rabbit_cookie'
+      )
     },
     'openstack-bare-metal' => {
       'id' => 'openstack-bare-metal',
-      'openstack-bare-metal' => random_pass('service_passwords', 'openstack-bare-metal')
+      'openstack-bare-metal' => random_pass(
+        'service_passwords',
+        'openstack-bare-metal'
+      )
     }
   },
   'secrets' => {
     'openstack_identity_bootstrap_token' => {
       'id' => 'openstack_identity_bootstrap_token',
-      'openstack_identity_bootstrap_token' => random_pass('secrets', 'openstack_identity_bootstrap_token')
+      'openstack_identity_bootstrap_token' => random_pass(
+        'secrets',
+        'openstack_identity_bootstrap_token'
+      )
     },
     'neutron_metadata_secret' => {
       'id' => 'neutron_metadata_secret',
-      'neutron_metadata_secret' => random_pass('secrets', 'neutron_metadata_secret')
+      'neutron_metadata_secret' => random_pass(
+        'secrets',
+        'neutron_metadata_secret'
+      )
     },
     'openstack_metering_secret' => {
       'id' => 'openstack_metering_secret',
-      'openstack_metering_secret' => random_pass('secrets', 'openstack_metering_secret')
+      'openstack_metering_secret' => random_pass(
+        'secrets',
+        'openstack_metering_secret'
+      )
     },
     'orchestration_auth_encryption_key' => {
       'id' => 'orchestration_auth_encryption_key',
-      'orchestration_auth_encryption_key' => random_pass('secrets', 'orchestration_auth_encryption_key')
+      'orchestration_auth_encryption_key' => random_pass(
+        'secrets',
+        'orchestration_auth_encryption_key'
+      )
     }
   },
   'db_passwords' => {
@@ -148,6 +181,10 @@ bags = {
     'backup' => {
       'id' => 'backup',
       'backup' => random_pass('user_passwords', 'backup')
+    },
+    'heat_stack_admin' => {
+      'id' => 'heat_stack_admin',
+      'heat_stack_admin' => random_pass('user_passwords', 'heat_stack_admin')
     }
   }
 }
