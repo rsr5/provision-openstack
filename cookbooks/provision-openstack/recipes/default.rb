@@ -15,6 +15,7 @@ include_recipe 'provision-openstack::images'
 include_recipe 'provision-openstack::compute'
 include_recipe 'provision-openstack::block_storage'
 include_recipe 'provision-openstack::compute_cert'
+include_recipe 'provision-openstack::compute_vncproxy'
 
 # require 'pry'; binding.pry
 
