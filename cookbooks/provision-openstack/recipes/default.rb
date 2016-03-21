@@ -18,6 +18,7 @@ include_recipe 'provision-openstack::compute_cert'
 include_recipe 'provision-openstack::compute_vncproxy'
 include_recipe 'provision-openstack::bare_metal_api'
 include_recipe 'provision-openstack::orchestration'
+include_recipe 'provision-openstack::dashboard'
 
 # require 'pry'; binding.pry
 
