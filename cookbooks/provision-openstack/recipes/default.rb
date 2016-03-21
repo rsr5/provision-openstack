@@ -13,6 +13,7 @@ include_recipe 'provision-openstack::ops'
 include_recipe 'provision-openstack::identity'
 include_recipe 'provision-openstack::images'
 include_recipe 'provision-openstack::compute'
+include_recipe 'provision-openstack::block_storage'
 
 # require 'pry'; binding.pry
 
