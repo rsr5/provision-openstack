@@ -19,8 +19,8 @@ include_recipe 'provision-openstack::compute'
 packer 'default' do
   action [
     :pack, # Calculate the number of virtual machine and pack the fragments
-    :berkshelf_vendor, # Fetch the required cookbooks
     :provision, # Create the virtual machines
+    :berkshelf_vendor, # Fetch the required cookbooks
     :converge # Run Chef in the virtual machines
   ]
 end

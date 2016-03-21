@@ -3,14 +3,6 @@
 chef_role 'os-compute-single-controller-no-network'
 
 fragment 'os-compute-single-controller-no-network' do
-  run_list %w(
-    os-identity
-
-    os-image
-    os-image-api
-    openstack-image::identity_registration
-    os-image-upload
-  )
   machine_option(
     vagrant_config: <<-ENDCONFIG
   config.vm.network "forwarded_port", guest: 443, host: 9443 # dashboard-ssl

@@ -9,19 +9,8 @@ chef_role 'os_base' do
   )
 end
 
-chef_role 'os-ops-database' do
-  run_list %w(
-    role[os_base]
-    recipe[openstack-ops-database::server]
-  )
-end
-
-chef_role 'os-ops-messaging' do
-  run_list %w(
-    role[os_base]
-    recipe[openstack-ops-messaging::server]
-  )
-end
+chef_role 'os-ops-database'
+chef_role 'os-ops-messaging'
 
 fragment 'os-ops' do
   memory_weight 100
@@ -29,8 +18,10 @@ fragment 'os-ops' do
     os-compute-single-controller-no-network
     os_base
     os-ops-database
+    openstack-ops-database::server
     openstack-ops-database::openstack-db
     os-ops-messaging
+    openstack-ops-messaging::server
   )
   environment 'vagrant-multi-neutron'
   tags %w(controller)

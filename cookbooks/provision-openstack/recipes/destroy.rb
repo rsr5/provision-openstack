@@ -19,6 +19,7 @@ end
    .chef/environments
    .chef/nodes
    .chef/roles
+   .chef/secrets
 ).each do |dir|
   directory chef_root(dir) do
     action :delete
